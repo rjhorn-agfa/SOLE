@@ -1,0 +1,7 @@
+@startuml
+
+"Event Sources" --> "Audit Repository" : "ITI-20"
+"Audit Repository" --> "Audit Repository" : "Filter and Forward Decision"
+"Audit Repository" --> "Event Consumer\n(Dashboard)" : ITI-20
+
+@enduml

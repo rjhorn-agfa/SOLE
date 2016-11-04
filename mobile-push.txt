@@ -1,0 +1,8 @@
+@startuml
+
+"Event Source (mobile)" --> "Event Source (mobile)" : "Events sent to Internal system logs"
+"User" --> "Event Source (mobile)" : "It's now time to deliver sync to server"
+"Event Source (mobile)" --> "Audit Repository" : "RAD-xxx Large Data Transfer"
+"Event Source (mobile)" --> "Event Source (mobile)" : "Internal log clean-up for events sent"
+
+@enduml
