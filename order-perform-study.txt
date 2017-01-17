@@ -1,0 +1,9 @@
+@startuml
+
+"Order Placer" --> "Audit Repository" : "ITI-20: (place order)"
+"Order Filler" --> "Audit Repository" : "ITI-20: (procedure scheduled)"
+"Acquisition Modality" --> "Audit Repository" : "ITI-20: (procedure started)"
+"Acquisition Modality" --> "Audit Repository" : "ITI-20: (procedure complete)"
+"Image Manager/Archive" --> "Audit Repository" : "ITI-20: (image storage complete)"
+"Image Manager/Archive" --> "Audit Repository" : "ITI-20: (exam prepared)"
+@enduml
