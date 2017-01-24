@@ -1,8 +1,8 @@
 @startuml
 
 "Independent Auditor" --> "Local Administrator" : "Provide all SOLE data for March to my Event Consumer"
-"Local Administrator" --> "Audit Repository" : "administrative commands"
-"Audit Repository" --> "Event Consumer" : "RAD-xxx Large Data Transfer"
+"Local Administrator" --> "Event Repository" : "administrative commands"
+"Event Repository" --> "Event Consumer" : "RAD-xxx Large Data Transfer"
 "Event Consumer" --> "Event Consumer" : "Ingest into analysis DBMS, e.g.,\nfree text query, xml query, etc."
 "Event Consumer" --> "Independent Auditor" : "Reports and analyses"
 
