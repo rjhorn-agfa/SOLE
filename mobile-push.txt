@@ -2,7 +2,7 @@
 
 "Event Reporter (mobile)" --> "Event Reporter (mobile)" : "Events sent to Internal system logs"
 "User" --> "Event Reporter (mobile)" : "It's now time to deliver sync to server"
-"Event Reporter (mobile)" --> "Audit Repository" : "RAD-xxx Large Data Transfer"
+"Event Reporter (mobile)" --> "Event Repository" : "RAD-xxx Large Data Transfer"
 "Event Reporter (mobile)" --> "Event Reporter (mobile)" : "Internal log clean-up for events sent"
 
 @enduml
