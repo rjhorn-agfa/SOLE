@@ -1,13 +1,15 @@
 @startuml
-"Order Placer" --> "Event Repository" : "ITI-20: (place order)"
-"Order Filler" --> "Event Repository" : "ITI-20: (procedure scheduled)"
+
+"Order Placer" -> "Event Repository" : "ITI-20: (place order)"
+"Order Filler" -> "Event Repository" : "ITI-20: (procedure scheduled)"
 "ADT" --> "Event Repository" : "ITI-20 (Patient Arrival)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (patient in)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (procedure prepared)"
+"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (patient in)"
+"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (procedure prepared)"
 "Acquisition Modality" --> "Event Repository" : "ITI-20: (procedure started)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (first image)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (procedure complete)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (patient out)"
-"Image Manager/Archive" --> "Event Repository" : "ITI-20: (image storage complete)"
+"Acquisition Modality" --> "Event Repository" : "ITI-20: (first image collected)"
+"Acquisition Modality" --> "Event Repository" : "ITI-20: (Imaging complete)"
+"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (patient out)"
+"Image Manager/Archive" --> "Event Repository" : "ITI-20: (QC Completed)"
 "Image Manager/Archive" --> "Event Repository" : "ITI-20: (exam prepared)"
+
 @enduml
