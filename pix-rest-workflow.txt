@@ -1,5 +1,6 @@
 @startuml
 
+"Event Consumer\n(Dashboard)" --> "Event Repository" : "ITI-82 Retrieve Syslog Event"
 "Event Reporter" --> "Event Repository" : "ITI-20"
 "Event Repository" --> "Event Repository" : "Filter and Forward Decision"
 "Event Repository" --> "Event Consumer\n(Dashboard)" : ITI-20

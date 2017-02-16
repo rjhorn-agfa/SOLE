@@ -2,8 +2,8 @@
 
 "BI Analyst" --> "Event Consumer" : "Desired analysis"
 "Event Consumer" --> "Event Consumer" : "Determine appropriate time period and data sources"
-"Event Consumer" --> "Event Repository" : "ITI-85 Request all data for time period and data sources"
-"Event Repository" --> "Event Consumer" : "ITI-85 Large data object response"
+"Event Consumer" --> "Event Repository" : "ITI-82 Request all data for time period and data sources"
+"Event Repository" --> "Event Consumer" : "ITI-82 Large data object response"
 "Event Consumer" --> "Event Consumer" : "Ingest into analysis DBMS, e.g.,\nfree text query, xml query, etc."
 "Event Consumer" --> "BI Analyst" : "Reports and analyses"
 
