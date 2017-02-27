@@ -1,4 +1,5 @@
 @startuml
+participant User
 
 "Event Reporter (mobile)" --> "Event Reporter (mobile)" : "Events sent to Internal system logs"
 "User" --> "Event Reporter (mobile)" : "It's now time to deliver sync to server"

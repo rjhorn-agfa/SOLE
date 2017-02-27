@@ -1,5 +1,7 @@
 @startuml
 
+participant "Event Repository"
+
 "Image Display" --> "Event Repository" : "ITI-20: (user login)"
 "Image Archive" --> "Event Repository" : "ITI-20: (exam prepared)"
 "Image Display" --> "Event Repository" : "ITI-20: (exam opened)"

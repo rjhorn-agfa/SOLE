@@ -1,0 +1,13 @@
+@startuml
+
+
+"Event Reporter" --> "Event Repository" : "Record Audit Event [ITI-20]"
+"Event Reporter" --> "Event Repository" : "Large Event Data Transfer [RAD-XX]"
+"Event Repository" --> "Event Consumer" : "Record Audit Event [ITI-20]"
+"Event Repository" --> "Event Consumer" : "Large Event Data Transfer [RAD-XX]"
+"Event Reporter" --> "Event Consumer" : "RAD-xxx Large Data Transfer"
+"Event Consumer" --> "Event Repository" : "Retrieve Syslog Event [ITI-82]"
+"Event Consumer" --> "Event Repository" : "Retrieve ATNA Audit Event [ITI-81]"
+
+
+@enduml

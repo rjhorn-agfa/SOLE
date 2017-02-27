@@ -1,5 +1,7 @@
 @startuml
 
+participant "Event Repository"
+
 "Order Placer" -> "Event Repository" : "ITI-20: (place order)"
 "Order Filler" -> "Event Repository" : "ITI-20: (procedure scheduled)"
 "ADT" --> "Event Repository" : "ITI-20 (Patient Arrival)"

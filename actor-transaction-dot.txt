@@ -1,0 +1,17 @@
+@startdot
+
+digraph foo {
+eventreporter [shape=box]
+eventrepository [shape=box]
+eventconsumer [shape=box]
+
+eventreporter -> eventrepository -> eventconsumer [label="Record ATNA Audit Event:[ITI-20]",style=bold];
+eventrepository -> eventconsumer [label="Large Event Data Transfer:[RAD-XX]"];
+eventreporter -> eventconsumer  [label="Large Event Data Transfer:[RAD-XX]"];
+eventreporter -> eventrepository  [label="Large Event Data Transfer:[RAD-XX]"];
+eventconsumer -> eventrepository [label="Retrieve Syslog Event:[ITI-82]",style=dashed];
+eventconsumer -> eventrepository [label="Retrieve ATNA Audit Event:[ITI-81]",style=dashed];
+
+}
+
+@enddot
