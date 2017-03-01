@@ -2,7 +2,7 @@
 
 "Independent Auditor" --> "Local Administrator" : "Provide all SOLE data for March to my Event Consumer"
 "Local Administrator" --> "Event Repository" : "administrative commands"
-"Event Repository" --> "Event Consumer" : "RAD-xxx Large Data Transfer"
+"Event Repository" --> "Event Consumer" : "[RAD-XX] Transfer Multiple Event Reports"
 "Event Consumer" --> "Event Consumer" : "Ingest into analysis DBMS, e.g.,\nfree text query, xml query, etc."
 "Event Consumer" --> "Independent Auditor" : "Reports and analyses"
 
