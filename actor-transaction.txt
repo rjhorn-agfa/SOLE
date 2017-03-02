@@ -1,13 +1,23 @@
 @startuml
 
+agent EventReporter [
+Event Reporter
+]
+agent EventRepository [
+Event Repository
+]
+agent EventConsumer [
+Event Consumer
+]
 
-"Event Reporter" --> "Event Repository" : "Record Audit Event [ITI-20]"
-"Event Reporter" --> "Event Repository" : "Large Event Data Transfer [RAD-XX]"
-"Event Repository" --> "Event Consumer" : "Record Audit Event [ITI-20]"
-"Event Repository" --> "Event Consumer" : "Large Event Data Transfer [RAD-XX]"
-"Event Reporter" --> "Event Consumer" : "RAD-xxx Large Data Transfer"
-"Event Consumer" --> "Event Repository" : "Retrieve Syslog Event [ITI-82]"
-"Event Consumer" --> "Event Repository" : "Retrieve ATNA Audit Event [ITI-81]"
+skinparam linetype ortho
+
+EventReporter --> EventRepository : "ITI-20 : Record Audit Event"
+EventReporter ..> EventRepository : "RAD-XX : Transfer Multiple Event Reports"
+EventRepository --> EventConsumer : "ITI-20 : Record Audit Event"
+EventRepository ..> EventConsumer : "RAD-XX : Transfer Multiple Event Reports"
+EventConsumer --> EventRepository : "ITI-82 : Retrieve Syslog Event"
+EventConsumer ..> EventRepository : "ITI-81 : Retrieve ATNA Audit Event"
 
 
 @enduml
