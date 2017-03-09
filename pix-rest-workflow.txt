@@ -1,8 +1,16 @@
 @startuml
 
-"Event Consumer\n(Dashboard)" --> "Event Repository" : "ITI-82 Retrieve Syslog Event"
-"Event Reporter" --> "Event Repository" : "ITI-20"
+participant "Event Reporter"
+participant "Event Repository"
+participant dashboard as "Event Consumer\n(Dashboard)"
+
+dashboard --> dashboard : "startup, retrieve backlog"
+dashboard -> "Event Repository" : "ITI-82 Retrieve Syslog Event"
+group Ongoing
+"Event Reporter" -> "Event Repository" : "ITI-20 : any event"
 "Event Repository" --> "Event Repository" : "Filter and Forward Decision"
-"Event Repository" --> "Event Consumer\n(Dashboard)" : ITI-20
+"Event Repository" -> dashboard : ITI-20
+dashboard --> dashboard : maintain status display
+end
 
 @enduml

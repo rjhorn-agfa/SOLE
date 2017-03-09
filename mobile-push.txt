@@ -1,9 +1,9 @@
 @startuml
 participant User
 
-"Event Reporter (mobile)" --> "Event Reporter (mobile)" : "Events sent to Internal system logs"
+"Event Reporter (mobile)" -> "Event Reporter (mobile)" : "Events sent to Internal system logs"
 "User" --> "Event Reporter (mobile)" : "It's now time to deliver sync to server"
-"Event Reporter (mobile)" --> "Event Repository" : "[RAD-XX] Transfer Multiple Event Reports"
-"Event Reporter (mobile)" --> "Event Reporter (mobile)" : "Internal log clean-up for events sent"
+"Event Reporter (mobile)" -> "Event Repository" : "[RAD-Y] Transfer Multiple Event Reports"
+"Event Reporter (mobile)" -> "Event Reporter (mobile)" : "Internal log clean-up for events sent"
 
 @enduml

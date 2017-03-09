@@ -1,19 +1,22 @@
 @startuml
 
 participant "Event Repository"
+participant "Image Display\nReport Creator" as Display
 
-"Image Display" --> "Event Repository" : "ITI-20: (user login)"
-"Image Archive" --> "Event Repository" : "ITI-20: (exam prepared)"
-"Image Display" --> "Event Repository" : "ITI-20: (exam opened)"
-"Image Display" --> "Event Repository" : "ITI-20: (query images)"
-"Image Archive" --> "Event Repository" : "ITI-20: (query images)"
-"Image Archive" --> "Event Repository" : "ITI-20: (retrieve images)"
-"Image Display" --> "Event Repository" : "ITI-20: (retrieve images)"
-"Image Display" --> "Image Display" : "view images and dictate report"
-"Image Display" --> "Event Repository" : "ITI-20: (dictated report)"
-"Image Display" --> "Event Repository" : "ITI-20: (reported and signed)"
-"Order Filler" --> "Event Repository" : "ITI-20: (final publish)"
-"Image Display" --> "Event Repository" : "ITI-20: (final publish)"
-"Order Filler" --> "Event Repository" : "ITI-20: (transfer to billing)"
+Display -> "Event Repository" : "ITI-20: (user login)"
+Display --> Display : "select next patient"
+Display -> "Event Repository" : "ITI-20: (ExamOpenedForReporting)"
+Display -> "Event Repository" : "ITI-20: (query images)"
+Display --> "Image Archive" : "request images"
+"Image Archive" -> "Event Repository" : "ITI-20: (query images)"
+"Image Archive" -> "Event Repository" : "ITI-20: (retrieve images)"
+"Image Archive" --> Display : "images sent"
+Display -> "Event Repository" : "ITI-20: (retrieve images)"
+Display --> Display : "view images and dictate report"
+Display -> "Event Repository" : "ITI-20: (ReportDictated)"
+Display -> "Event Repository" : "ITI-20: (ReportApproved)"
+Display --> "Order Filler" : "Send finished report"
+"Order Filler" -> "Event Repository" : "ITI-20: (ReportAvailable)"
+"Order Filler" -> "Event Repository" : "ITI-20: (ExamTransferToBilling)"
 
 @enduml

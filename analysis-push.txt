@@ -1,9 +1,15 @@
 @startuml
 
+actor "Independent Auditor"
+participant "Event Consumer"
+participant "Event Repository"
+actor "Local Administrator"
+
 "Independent Auditor" --> "Local Administrator" : "Provide all SOLE data for March to my Event Consumer"
 "Local Administrator" --> "Event Repository" : "administrative commands"
-"Event Repository" --> "Event Consumer" : "[RAD-XX] Transfer Multiple Event Reports"
+"Event Repository" -> "Event Consumer" : "[RAD-Y] Transfer Multiple Event Reports"
 "Event Consumer" --> "Event Consumer" : "Ingest into analysis DBMS, e.g.,\nfree text query, xml query, etc."
+"Event Consumer" --> "Event Consumer" : "Create Reports and analyses"
 "Event Consumer" --> "Independent Auditor" : "Reports and analyses"
 
 @enduml

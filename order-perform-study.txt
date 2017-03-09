@@ -2,16 +2,14 @@
 
 participant "Event Repository"
 
-"Order Placer" -> "Event Repository" : "ITI-20: (place order)"
-"Order Filler" -> "Event Repository" : "ITI-20: (procedure scheduled)"
-"ADT" --> "Event Repository" : "ITI-20 (Patient Arrival)"
-"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (patient in)"
-"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (procedure prepared)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (procedure started)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (first image collected)"
-"Acquisition Modality" --> "Event Repository" : "ITI-20: (Imaging complete)"
-"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (patient out)"
-"Image Manager/Archive" --> "Event Repository" : "ITI-20: (QC Completed)"
-"Image Manager/Archive" --> "Event Repository" : "ITI-20: (exam prepared)"
+"Order Placer" -> "Event Repository" : "ITI-20: (Exam Ordered)"
+"Order Filler" -> "Event Repository" : "ITI-20: (AppoinntmentTimeScheduled)"
+"ADT" --> "Event Repository" : "ITI-20 (PatientArrivedAtImaging)"
+"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (PatientIn)"
+"Acquisition Modality" --> "Event Repository" : "ITI-20: (DataAcquisitionStarted)"
+"Acquisition Modality" --> "Event Repository" : "ITI-20: (ImagingComplete)"
+"Patient Location\nTracking Supplier" --> "Event Repository" : "ITI-20: (PatientOut)"
+"Image Manager/Archive" --> "Event Repository" : "ITI-20: (QCCompleted)"
+"Image Manager/Archive" --> "Event Repository" : "ITI-20: (StudyPrepared)"
 
 @enduml
